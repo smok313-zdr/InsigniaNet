@@ -1,4 +1,4 @@
-# FindMyOrder
+# InsigniaNet: Deep Learning for Military Ribbon Bar Classification
 
 ### Wprowadzenie
 
