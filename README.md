@@ -1,15 +1,15 @@
 # InsigniaNet: Deep Learning for Military Ribbon Bar Classification
 
-### Wprowadzenie
+### Introduction
 
-FindMyOrder to aplikacja umożliwiająca identyfikację baretek Wojska Polskiego na podstawie zdjęć, wykorzystująca konwolucyjne sieci neuronowe (CNN). Do treningu modelu wykorzystano fotografie baretek pobrane z internetu oraz zdjęcia z mundurów żołnierzy Wojska Polskiego. Aby poprawić jakość predykcji nowych obrazów, zastosowano warstwę dropout (`keras.layers.Dropout`) jako technikę regularyzacji, która zapobiega nadmiernemu dopasowaniu modelu do danych uczących. Aplikacja potrafi rozpoznać nawet przyciemnione lub lekko wyblakłe baretki, osiągając skuteczność predykcji na poziomie około 95%. 
+InsigniaNet is an application designed to identify Polish Army ribbon bars from images using Convolutional Neural Networks (CNNs). The model was trained on ribbon bar photographs collected from the internet, as well as images taken from Polish Army uniforms. To improve prediction quality on new images, a dropout layer (`keras.layers.Dropout`) was applied as a regularization technique to prevent overfitting on the training data. The application is capable of recognizing even darkened or slightly faded ribbon bars, achieving an accuracy of approximately 95%.
 
-### Działanie aplikacji
+### How the Application Works
 
-Implementacja aplikacji została zrealizowana w środowisku Jupyter Notebook i jest dostępna w Google Colab. Kolejność wykonywania fragmentów kodu ma znaczenie! 
+The application was implemented in a Jupyter Notebook environment and is available in Google Colab. The order of code execution is important.
 
-Na początku należy zaimportować z github całą strukturę katalogu „baretki” – co realizuje pierwszy fragment kodu. Obrazy znajdujące się w tej strukturze będą służyć jako dane treningowe dla modelu. Podany fragment kodu można wykonywać wielokrotnie, za każdym razem katalog "baretki" w Colab będzie nadpisywany.
+First, the entire `military_ribbon_dataset` directory structure must be imported from GitHub — this is handled by the first code block. The images contained in this directory are used as training data for the model. This code block can be executed multiple times; each time, the `military_ribbon_dataset` folder in Colab will be overwritten.
 
-Następnie należy uruchomić drugi fragment kodu, który buduje i trenuje model na podstawie danych wejściowych, jednocześnie weryfikując ich poprawność.
+Next, the second code block should be executed. It builds and trains the model using the input data while also validating the dataset.
 
-Ostatnim krokiem jest dodanie do folderu „baretki” nowego zdjęcia, które posłuży do identyfikacji. Domyślnie zdjęcie powinno być zapisane jako `test.png`, jednak można to zmienić w zmiennej `img_path`. Kluczowe jest, aby na fotografii znajdowała się tylko jedna baretka – model dokona predykcji i wskaże, z jakim prawdopodobieństwem zaklasyfikował ją do konkretnej klasy.
+The final step is to add a new image to the `military_ribbon_dataset` folder for identification. By default, the image should be saved as `test.png`, although this can be changed in the `img_path` variable. It is important that the photo contains only a single ribbon bar — the model will perform the prediction and indicate the probability of assigning it to a specific class.
